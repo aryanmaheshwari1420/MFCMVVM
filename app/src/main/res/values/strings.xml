@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MFCMVVM</string>
+    <string name="rating_format">\u2B50 %1$.1f</string>
+    <string name="location_format">\uD83D\uDCCD %1$s</string>
+    <string name="stats_format">%1$d followers • %2$d following</string>
+    <string name="joined_date_format">Joined: %1$s</string>
+</resources>
