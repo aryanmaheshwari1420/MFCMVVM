@@ -36,7 +36,7 @@ class UserRepository(private val context: Context) {
             if (cached.isNotEmpty()) {
                 Result.success(cached.map { it.toUser() })
             } else {
-                Result.failure(Exception("No internet connection and no cached data available."))
+                Result.failure(Exception("OFFLINE"))
             }
         }
     }

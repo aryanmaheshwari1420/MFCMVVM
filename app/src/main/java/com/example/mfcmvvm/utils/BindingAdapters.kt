@@ -17,4 +17,10 @@ object BindingAdapters {
             .circleCrop()
             .into(imageView)
     }
+
+    @JvmStatic
+    @BindingAdapter("visible")
+    fun setVisibility(view: android.view.View, isVisible: Boolean) {
+        view.visibility = if (isVisible) android.view.View.VISIBLE else android.view.View.GONE
+    }
 }

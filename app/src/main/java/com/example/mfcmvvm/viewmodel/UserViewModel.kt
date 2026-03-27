@@ -42,7 +42,11 @@ class UserViewModel(private val repository: UserRepository) : ViewModel() {
                 applyFilter(users)
                 _uiState.value = UiState.Success(users)
             }.onFailure { e ->
-                _uiState.value = UiState.Error(e.message ?: "Something went wrong")
+                if (e.message == "OFFLINE") {
+                    _uiState.value = UiState.Offline
+                } else {
+                    _uiState.value = UiState.Error(e.message ?: "Something went wrong")
+                }
             }
         }
     }

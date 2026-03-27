@@ -90,6 +90,14 @@ class MainActivity : AppCompatActivity() {
                     binding.btnRetry.visibility = View.VISIBLE
                     Toast.makeText(this, state.message, Toast.LENGTH_LONG).show()
                 }
+                is UiState.Offline -> {
+                    binding.shimmerView.stopShimmer()
+                    binding.shimmerView.visibility = View.GONE
+                    binding.swipeRefresh.isRefreshing = false
+                    binding.btnRetry.visibility = View.VISIBLE
+                    binding.tvEmptyState.text = "No internet connection. Please check your network and try again."
+                    binding.tvEmptyState.visibility = View.VISIBLE
+                }
                 else -> {}
             }
         }
